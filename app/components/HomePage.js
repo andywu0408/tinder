@@ -6,10 +6,10 @@ import './homepage.css';
 
 //NOTE: This is the home screen
 const HomePage = props => {
-  
-  const [selectedFoodTags, setSelectedFoodTags] = useState([]);
+
+  const [selectedFoodTags, setSelectedFoodTags] = useState(["all"]);
   const [selectedRestaurantTags, setSelectedRestaurantTags] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("davis,ca");
 
   useEffect(() => {
     console.log("In homepage")
@@ -61,21 +61,21 @@ const HomePage = props => {
 
   return (
     <main
-      id = "mainContainer"
+      id="mainContainer"
     >
-      <h1 id = "title">
+      <h1 id="title">
         Welcome to Restaurant Tinder!
       </h1>
-      <div id = "searchControlContainer">
+      <div id="searchControlContainer">
         <SearchControl type="restaurants" updateVal={setSelectedRestaurantTags} />
         <SearchControl type="food" updateVal={setSelectedFoodTags} />
         <LocSearchBar updateVal={setSelectedLocation} />
       </div>
       <Button
         type="primary"
-       
+
         ghost
-        id = "startButton"
+        id="startButton"
         onClick={handleClick}
       >
         Start New Game!
@@ -115,7 +115,7 @@ const Styles = {
   modal: {
     backgroundColor: 'pink'
   }
-  
+
 }
 
 export default HomePage;
